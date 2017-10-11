@@ -16,6 +16,8 @@ void deliverdItem(char *name,char *command);
 void writeOnFile(char *name,char *str);
 void delay(int m);
 void help();
+
+
 void printInformation(char *name){
     char name_of_file[40];
     strcpy(name_of_file,name);
@@ -95,7 +97,7 @@ void writeOnFile(char *name,char *str){
     printf ("Done!\n");
     /* Release the lock. */
     lock.l_type = F_UNLCK;
-   // printf("%d",lock.l_type);
+    printf("%d",lock.l_type);
     fcntl (fd, F_SETLKW, &lock);
 
  close (fd);
